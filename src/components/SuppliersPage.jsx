@@ -7,18 +7,18 @@ import {
 } from "@mui/material";
 import {
   LocalShipping as TruckIcon,
-  Business as BuildingIcon,
+  // Business as BuildingIcon,
   Inventory2 as PackageIcon,
   Star as StarIcon,
-  MailOutline as MailIcon,
-  Phone as PhoneIcon,
-  LocationOn as LocationIcon,
+  // MailOutline as MailIcon,
+  // Phone as PhoneIcon,
+  // LocationOn as LocationIcon,
   Add as AddIcon,
   MoreVert as MoreVertIcon,
   Edit as EditIcon,
   Delete as DeleteIcon,
-  Visibility as VisibilityIcon,
-  RemoveCircleOutline as RemoveIcon,
+  // Visibility as VisibilityIcon,
+  // RemoveCircleOutline as RemoveIcon,
 } from "@mui/icons-material";
 import { toast } from "sonner";
 import apiClient, { getSuppliers } from "../api/apiClient";
@@ -32,7 +32,7 @@ export default function SuppliersPage() {
   const [filterStatus, setFilterStatus] = useState("all");
   const [isAddOpen, setIsAddOpen] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(false);
-  const [isViewOpen, setIsViewOpen] = useState(false);
+  // const [isViewOpen, setIsViewOpen] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [menuSupplierId, setMenuSupplierId] = useState(null);
