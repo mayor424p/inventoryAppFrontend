@@ -84,7 +84,7 @@ export default function SuppliersPage() {
     try {
       const payload = {
         ...formData,
-        products_supplied: Array.isArray(formData.products_supplied)
+        products_supplied: Array.isArray(supplier.products_supplied)
           ? formData.products_supplied.join(", ")
           : formData.products_supplied,
       };

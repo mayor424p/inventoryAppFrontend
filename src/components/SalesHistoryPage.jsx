@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
   Box,
-  Grid,
+  // Grid,
   Card,
   CardContent,
   Typography,
@@ -61,11 +61,11 @@ export default function SalesHistoryPage() {
     return matchesSearch && matchesStatus;
   });
 
-  const totalSales = filteredSales.reduce(
-    (sum, t) => sum + parseFloat(t.total_amount || 0),
-    0
-  );
-  const totalOrders = filteredSales.length;
+  // const totalSales = filteredSales.reduce(
+  //   (sum, t) => sum + parseFloat(t.total_amount || 0),
+  //   0
+  // );
+  // const totalOrders = filteredSales.length;
 
   const formatDate = (date) =>
     new Date(date).toLocaleString("en-US", {
