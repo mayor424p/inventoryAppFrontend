@@ -3,7 +3,7 @@ import axios from 'axios';
 // ---------------------------
 // API Base URL
 // ---------------------------
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
+const API_BASE_URL = 'https://inventoryapp-knhf.onrender.com/api';
 
 // Create axios instance
 const apiClient = axios.create({
