@@ -28,7 +28,7 @@ import {
 import { toast } from "sonner";
 import axios from "axios";
 
-const API_BASE = "http://127.0.0.1:8000/api";
+const API_BASE = "https://inventoryapp-knhf.onrender.com/api";
 
 export default function DashboardPage() {
   const [stats, setStats] = useState(null);
