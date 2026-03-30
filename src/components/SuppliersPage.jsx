@@ -140,7 +140,7 @@ export default function SuppliersPage() {
   });
 
   const totalSuppliers = suppliers.length;
-  const activeSuppliers = suppliers.filter((s) => s.status === "active").length;
+  // const activeSuppliers = suppliers.filter((s) => s.status === "active").length;
   const totalProducts = suppliers.reduce((sum, s) => sum + ((s.products_supplied?.length) || 0), 0);
   const avgRating =
     suppliers.length > 0
@@ -165,7 +165,7 @@ export default function SuppliersPage() {
       email: supplier.email,
       phone_number: supplier.phone_number,
       address: supplier.address,
-      products_supplied: Array. isArray(supplier.products_supplied)
+      products_supplied: Array.isArray(supplier.products_supplied)
       ? supplier.products_supplied
       : supplier.products_supplied
       ? supplier.products_supplied.split(",").map((p) => p.trim())
@@ -175,8 +175,8 @@ export default function SuppliersPage() {
     setIsEditOpen(true);
   };
 
-  const formatDate = (date) =>
-    date ? new Date(date).toLocaleDateString("en-US") : "N/A";
+  // const formatDate = (date) =>
+    // date ? new Date(date).toLocaleDateString("en-US") : "N/A";
 
   /* ---------- Loading/Error States ---------- */
   if (loading)

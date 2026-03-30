@@ -15,7 +15,7 @@ import {
   CircularProgress,
   Snackbar,
 } from '@mui/material';
-import Autocomplete from '@mui/lab/Autocomplete';
+import {Autocomplete} from '@mui/material';
 import { Upload, Download } from '@mui/icons-material';
 import { createProduct, getCategories, getSuppliers, getLocations } from '../api/apiClient';
 import { toast } from 'sonner';
@@ -186,11 +186,11 @@ const AddItemPage = () => {
     const response = await createProduct(productData);
     console.log("Product created successfully:", response.data);
 
-    const { sku, barcode_image } = response.data;
-    setGeneratedResult({ sku, barcode_image });
+    // const { sku, barcode_image } = response.data;
+    // setGeneratedResult({ sku, barcode_image });
 
-    toast.success(`${formData.name} added successfully! SKU: ${sku}`);
-
+    // toast.success(`${formData.name} added successfully! SKU: ${sku}`);
+    toast.success(`${formData.name} added successfully!`);
     // --- Step 6: Reset form ---
     setFormData({
       name: "",
