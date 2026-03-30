@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from "react";
 import {
-  Box, Grid, Card, CardContent, CardHeader, Typography, Button, TextField,
-  Chip, Table, TableBody, TableCell, TableHead, TableRow, Dialog, DialogTitle,
-  DialogContent, DialogActions, IconButton, Menu, MenuItem, Divider, Paper,
-  CircularProgress, Alert,
+  Box,
+  Grid,
+  Card,
+  CardContent,
+  CardHeader,
+  Typography,
+  Button,
+  TextField,
+  Chip,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  IconButton,
+  Menu,
+  MenuItem,
+  CircularProgress,
+  Alert,
 } from "@mui/material";
 import {
   LocalShipping as TruckIcon,
-  // Business as BuildingIcon,
   Inventory2 as PackageIcon,
   Star as StarIcon,
-  // MailOutline as MailIcon,
-  // Phone as PhoneIcon,
-  // LocationOn as LocationIcon,
   Add as AddIcon,
   MoreVert as MoreVertIcon,
   Edit as EditIcon,
   Delete as DeleteIcon,
-  // Visibility as VisibilityIcon,
-  // RemoveCircleOutline as RemoveIcon,
 } from "@mui/icons-material";
 import { toast } from "sonner";
 import apiClient, { getSuppliers } from "../api/apiClient";
@@ -84,7 +97,7 @@ export default function SuppliersPage() {
     try {
       const payload = {
         ...formData,
-        products_supplied: Array.isArray(supplier.products_supplied)
+        products_supplied: Array.isArray(selectedSupplier.products_supplied)
           ? formData.products_supplied.join(", ")
           : formData.products_supplied,
       };

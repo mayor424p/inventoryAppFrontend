@@ -8,19 +8,16 @@ import {
   Typography,
   Button,
   TextField,
-  FormControl, // Keep this for Supplier/Location if using Select
+  FormControl,
   Tabs,
   Tab,
   Alert,
   CircularProgress,
   Snackbar,
-  // Remove IconButton if not needed elsewhere
 } from '@mui/material';
-// Import the Autocomplete component from MUI Lab
-import Autocomplete from '@mui/lab/Autocomplete'; 
-import { Add as  Upload, Download } from '@mui/icons-material';
-// Import necessary API functions
-import { createProduct, getCategories, getSuppliers, getLocations, } from '../api/apiClient';
+import Autocomplete from '@mui/lab/Autocomplete';
+import { Upload, Download } from '@mui/icons-material';
+import { createProduct, getCategories, getSuppliers, getLocations } from '../api/apiClient';
 import { toast } from 'sonner';
 
 const AddItemPage = () => {
@@ -48,7 +45,7 @@ const AddItemPage = () => {
   // State for Autocomplete
   const [inputValue, setInputValue] = useState(''); // Holds the text typed by the user in the Autocomplete
   const [options, setOptions] = useState([]); // Holds the options displayed in the Autocomplete dropdown
-  const [ setGeneratedResult] = useState(null);
+  
 
   // Fetch categories, suppliers, and locations on component mount
   useEffect(() => {

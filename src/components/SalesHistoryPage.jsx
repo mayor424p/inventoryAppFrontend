@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   Box,
-  // Grid,
   Card,
   CardContent,
   Typography,
@@ -24,10 +23,6 @@ import {
   Receipt,
   Search,
   Download,
-  // MonetizationOn,
-  // ShoppingBag,
-  // TrendingUp,
-  // Visibility,
   ExpandLess,
   ExpandMore,
 } from "@mui/icons-material";
