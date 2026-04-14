@@ -71,15 +71,16 @@ const AuthPage = () => {
       const { access, refresh, role, staff_details } = response.data;
 
       const user = {
-        id: staff_details.id,
+        id: staff_details.id || null,
         username: staff_details.username,
-        role: role,
+        role: staff_details?.role || role, // fallback to role from token if not in details
+        name: staff_details?.name,
       };
 
       // ✅ Save tokens and role
       localStorage.setItem('access_token', access);
       localStorage.setItem('refresh_token', refresh);
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('user', JSON.stringify(user || {}));
 
       toast.success('Login successful!');
 

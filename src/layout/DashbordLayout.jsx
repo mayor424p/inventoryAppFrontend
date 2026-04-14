@@ -17,17 +17,37 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 const drawerWidth = 220;
 
-const menuItems = [
+const baseMenu = [
   { text: "Dashboard", path: "/" },
   { text: "POS", path: "/pos" },
+];
+
+const managerMenu = [
   { text: "Sales History", path: "/sales" },
   { text: "Suppliers", path: "/suppliers" },
   { text: "Inventory", path: "/inventory" },
   { text: "Staff", path: "/staff" },
 ];
 
+const menuItems =
+  role === "manager"
+    ? [...baseMenu, ...managerMenu]
+    : baseMenu;
+
+// const menuItems = [
+//   { text: "Dashboard", path: "/" },
+//   { text: "POS", path: "/pos" },
+//   { text: "Sales History", path: "/sales" },
+//   { text: "Suppliers", path: "/suppliers" },
+//   { text: "Inventory", path: "/inventory" },
+//   { text: "Staff", path: "/staff" },
+// ];
+
 export default function DashboardLayout() {
   const location = useLocation();
+
+const user = JSON.parse(localStorage.getItem("user"));
+const role = user?.role;
 
   return (
     <Box sx={{ display: "flex" }}>
