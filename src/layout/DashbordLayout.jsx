@@ -17,6 +17,9 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 const drawerWidth = 220;
 
+const user = JSON.parse(localStorage.getItem("user"));
+const role = user?.role;
+
 const baseMenu = [
   { text: "Dashboard", path: "/" },
   { text: "POS", path: "/pos" },
@@ -46,8 +49,7 @@ const menuItems =
 export default function DashboardLayout() {
   const location = useLocation();
 
-const user = JSON.parse(localStorage.getItem("user"));
-const role = user?.role;
+
 
   return (
     <Box sx={{ display: "flex" }}>

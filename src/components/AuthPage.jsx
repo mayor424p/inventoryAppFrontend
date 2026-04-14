@@ -80,7 +80,8 @@ const AuthPage = () => {
       // ✅ Save tokens and role
       localStorage.setItem('access_token', access);
       localStorage.setItem('refresh_token', refresh);
-      localStorage.setItem('user', JSON.stringify(user || {}));
+      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('role', user.role); // for quick access in layout
 
       toast.success('Login successful!');
 

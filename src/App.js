@@ -18,7 +18,8 @@ import { Toaster } from "sonner";
 // -----------------------
 function RequireAuth({ children, roleRequired = null }) {
   const token = localStorage.getItem("access_token");
-  const userRole = localStorage.getItem("role"); // stored on login/register (manager | staff)
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userRole = user?.role;
 
   if (!token) {
     return <Navigate to="/login" replace />;
